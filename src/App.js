@@ -33,7 +33,8 @@ class App extends Component {
         <Poll question={pollQuestion}
               answers={pollAnswers}
               onVote={this.handleVote}
-              customStyles={{ theme: 'purple' }}/>
+              customStyles={{ theme: 'purple' }}
+              noStorage={true}/>
       </div>
     );
   }
