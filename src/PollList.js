@@ -26,11 +26,13 @@ class PollList extends Component {
   render() {
     return(
       <div className="pollList">
+        {this.props.view === true ?
         <Poll
           question={pollQuestion}
           answers={pollAnswers}
           onVote={this.handleVote}
-          noStorage={true}/>
+          noStorage={true}/> :
+          <h1>false</h1> }
       </div>
     )
   }
