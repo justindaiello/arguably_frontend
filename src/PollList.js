@@ -26,7 +26,7 @@ class PollList extends Component {
   render() {
     return(
       <div className="pollList">
-        {this.props.view === true ?
+        {this.props.view === "t" ?
         <Poll
           question={pollQuestion}
           answers={pollAnswers}

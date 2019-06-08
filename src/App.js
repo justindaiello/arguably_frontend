@@ -7,7 +7,7 @@ import './App.css';
 class App extends Component {
 
   state = {
-    pollView: true,
+    pollView: "t",
     openPolls: [],
     closedPolls: [],
   }
@@ -34,7 +34,7 @@ class App extends Component {
 
     //Sort polls into open or closed based on boolean value
     polls.forEach(poll => {
-      if (!polls.open) {
+      if (poll.open === "t") {
         openPolls.push(poll)
       } else {
         closedPolls.push(poll)
