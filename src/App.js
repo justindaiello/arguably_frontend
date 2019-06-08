@@ -23,7 +23,6 @@ class App extends Component {
     .then(res => res.json())
     .then(data => {
       this.sortPolls(data);
-      console.log(data);
     })
   }
 

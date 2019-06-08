@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Poll from 'react-polls';
 import SinglePoll from './SinglePoll'
 
 
@@ -15,7 +14,8 @@ class PollList extends Component {
               return (
                 <SinglePoll
                   question={poll.question}
-                  pollAnswers={poll.answers}
+                  answer1={poll.answer1}
+                  answer2={poll.answer2}
                   points1={poll.bulletPoints1}
                   points2={poll.bulletPoints2}
                   key={index}
