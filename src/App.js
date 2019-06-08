@@ -18,16 +18,42 @@ class App extends Component {
   }
 
   //Grab polls from our server
-  fetchTasks = () => {
+  fetchPolls = () => {
     fetch('http://localhost:3000/polls')
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+      this.sortPolls(data);
+      console.log(data);
+    })
+  }
+
+  //Sort polls into open of closed arrays in state
+  sortPolls = (polls) => {
+    let openPolls = []
+    let closedPolls = []
+
+    //Sort polls into open or closed based on boolean value
+    polls.forEach(poll => {
+      if (!polls.open) {
+        openPolls.push(poll)
+      } else {
+        closedPolls.push(poll)
+      }
+    })
+    //trigger rerender & update polls
+    this.setState({
+      openPolls: openPolls,
+      closedPolls: closedPolls
+    })
+  }
+
+  componentDidMount() {
+    this.fetchPolls()
   }
 
   render() {
     return (
       <div className="App">
-      {this.fetchTasks()};
         <PollList view={this.state.pollView}/>
       </div>
     );
