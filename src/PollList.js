@@ -16,8 +16,12 @@ class PollList extends Component {
                   question={poll.question}
                   answer1={poll.answer1}
                   answer2={poll.answer2}
-                  points1={poll.bulletPoints1}
-                  points2={poll.bulletPoints2}
+                  bp1={poll.bp1}
+                  bp2={poll.bp2}
+                  bp3={poll.bp3}
+                  bp4={poll.bp4}
+                  bp5={poll.bp5}
+                  bp6={poll.bp6}
                   key={index}
                   poll={poll}/>
               )

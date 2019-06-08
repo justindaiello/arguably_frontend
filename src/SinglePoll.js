@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import Poll from 'react-polls';
 
-// const pollQuestion = 'Is react-polls useful?'
-// const pollAnswers = [
-//   { option: 'Yes', votes: 0 },
-//   { option: 'No', votes: 0 }
-// ]
 
 class SinglePoll extends Component {
 
@@ -35,8 +30,17 @@ class SinglePoll extends Component {
   render() {
     return(
       <div>
-      <h1> {this.props.poll.question} </h1>
-      <h1> {this.props.poll.answer1} </h1>
+      <h1> { this.props.poll.question } </h1>
+      <ul>
+        <li>{ this.props.poll.bp1 }</li>
+        <li>{ this.props.poll.bp2 }</li>
+        <li>{ this.props.poll.bp3 }</li>
+      </ul>
+      <ul>
+        <li>{ this.props.poll.bp4 }</li>
+        <li>{ this.props.poll.bp5 }</li>
+        <li>{ this.props.poll.bp6 }</li>
+      </ul>
       <Poll
         // question={this.props.poll.question} this will cause a console error, but the poll works
         answers={this.state.pollAnswers}
