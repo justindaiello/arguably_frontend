@@ -3,10 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Poll from 'react-polls';
 
-const pollQuestion = 'Does this work?';
+const pollQuestion = 'Is a hotdog a sandwich';
 const pollAnswers = [
-  { option: 'Yes', votes: 0},
-  { option: 'No', votes: 0}
+  { option: 'Yes', votes: 0 },
+  { option: 'No', votes: 0 },
+  { option: 'Maybe', votes: 0 }
 ]
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1> test test test </h1>
         <Poll question={pollQuestion}
               answers={pollAnswers}
               onVote={this.handleVote}
