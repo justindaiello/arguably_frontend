@@ -42,7 +42,7 @@ class SinglePoll extends Component {
         <li>{ this.props.poll.bp6 }</li>
       </ul>
       <Poll
-        // question={this.props.poll.question} this will cause a console error, but the poll works
+        question={null}
         answers={this.state.pollAnswers}
         onVote={this.handleVote}
         noStorage={true} />
