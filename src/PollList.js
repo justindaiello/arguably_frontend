@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
 import Poll from 'react-polls';
+import SinglePoll from './SinglePoll'
 
-const pollQuestion = 'Is react-polls useful?'
-const pollAnswers = [
-  { option: 'Yes', votes: 8 },
-  { option: 'No', votes: 2 }
-]
 
 class PollList extends Component {
-
-  handleVote = voteAnswer => {
-    const { pollAnswers } = this.state
-    const newPollAnswers = pollAnswers.map(answer => {
-      if (answer.option === voteAnswer) answer.votes++
-      return answer
-    })
-    this.setState({
-      pollAnswers: newPollAnswers
-    })
-  }
-
-
 
 
   render() {
     return(
       <div className="pollList">
         {this.props.view === "t" ?
-        <Poll
-          question={pollQuestion}
-          answers={pollAnswers}
-          onVote={this.handleVote}
-          noStorage={true}/> :
+        <div>
+          { this.props.openPolls.map((poll, index) => {
+              return (
+                <SinglePoll
+                  question={poll.question}
+                  pollAnswers={poll.answers}
+                  points1={poll.bulletPoints1}
+                  points2={poll.bulletPoints2}
+                  key={index}
+                  poll={poll}/>
+              )
+          })}
+        </div>:
           <h1>false</h1> }
       </div>
     )

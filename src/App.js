@@ -54,7 +54,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PollList view={this.state.pollView}/>
+        <PollList
+          view={this.state.pollView}
+          openPolls={this.state.openPolls}
+          closedPolls={this.state.closedPolls}
+        />
       </div>
     );
   }
