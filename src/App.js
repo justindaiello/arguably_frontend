@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PollList from './PollList';
+import PollList from './Components/PollList';
 import './App.css';
 
 
@@ -52,7 +52,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="arguably-container">
         <PollList
           view={this.state.pollView}
           openPolls={this.state.openPolls}
