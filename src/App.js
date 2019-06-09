@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from './Components/Form'
 import PollList from './Components/PollList';
 import './App.css';
 
@@ -55,6 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
+        <Form />
         <PollList
           view={this.state.pollView}
           openPolls={this.state.openPolls}
