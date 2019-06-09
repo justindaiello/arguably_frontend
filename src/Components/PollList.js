@@ -27,7 +27,24 @@ class PollList extends Component {
               )
           })}
         </div>:
-          <h1>false</h1> }
+        <div>
+          { this.props.openPolls.map((poll, index) => {
+              return (
+                <SinglePoll
+                  question={poll.question}
+                  answer1={poll.answer1}
+                  answer2={poll.answer2}
+                  bp1={poll.bp1}
+                  bp2={poll.bp2}
+                  bp3={poll.bp3}
+                  bp4={poll.bp4}
+                  bp5={poll.bp5}
+                  bp6={poll.bp6}
+                  key={index}
+                  poll={poll}/>
+              )
+          })}
+        </div> }
       </div>
     )
   }

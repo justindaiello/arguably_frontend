@@ -12,6 +12,8 @@ class App extends Component {
     closedPolls: [],
   }
 
+  //ES6 arrow functions on methods for binding
+
   //Toggle view for open and closed polls
   handleView = (view) => {
     this.setState({ pollView: view })
