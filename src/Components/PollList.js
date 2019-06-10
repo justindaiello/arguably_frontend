@@ -23,7 +23,8 @@ class PollList extends Component {
                   bp5={poll.bp5}
                   bp6={poll.bp6}
                   key={index}
-                  poll={poll}/>
+                  poll={poll}
+                  handleDelete={this.props.handleDelete}/>
               )
           })}
         </div>:
@@ -41,7 +42,8 @@ class PollList extends Component {
                   bp5={poll.bp5}
                   bp6={poll.bp6}
                   key={index}
-                  poll={poll}/>
+                  poll={poll}
+                  handleDelete={this.props.handleDelete}/>
               )
           })}
         </div> }
