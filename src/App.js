@@ -53,7 +53,7 @@ class App extends Component {
   //Create a new Poll
   handleCreatePoll(poll) {
     fetch('http://localhost:3000/polls', {
-      body: JSON.stringify(task),
+      body: JSON.stringify(poll),
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',

@@ -4,43 +4,61 @@ import React, { Component } from 'react';
 
 class Form extends Component {
 
-  state = {
-      prompt: '',
-      subject: '',
-      argOneFirst: '',
-      argOneSecond: '',
-      argOneThird: '',
-      argTwoFirst: '',
-      argTwoSecond: '',
-      argTwoThird: ''
+  constructor(props) {
+    super(props)
+    this.state = {
+      question: '',
+      answer1: '',
+      answer2: '',
+      bp1: '',
+      bp2: '',
+      bp3: '',
+      bp4: '',
+      bp5: '',
+      bp6: '',
+      open: 't'
+    }
   }
 
   // handle input change
-handleChange(e) {
-  this.setState( { [e.target.id]: e.target.value } )
-}
-
-// handle submit of form
-handleSubmit(e) {
-  // prevents default behavior of submitting a form
-  e.preventDefault()
-  // creating the new song object based off user input
-  const newSong = {
-    prompt: this.state.prompt,
-    subject: this.state.subject,
-    argOneFirst: this.state.argOneFirst,
-    argOneSecond: this.state.argOneSecond,
-    argOneThird: this.state.argOneThird,
-    argTwoFirst: this.state.argTwoFirst,
-    argTwoSecond: this.state.argTwoSecond,
-    argTwoThird: this.state.argTwoThird
+  handleChange = (e) => {
+    this.setState( { [e.target.id]: e.target.value } )
   }
 
-}
+  // handle submit of form
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleCreatePoll(this.state)
+    this.setState({
+      question: '',
+      answer1: '',
+      answer2: '',
+      bp1: '',
+      bp2: '',
+      bp3: '',
+      bp4: '',
+      bp5: '',
+      bp6: '',
+      open: 't'
+    })
 
-  clearForm = () => {
-     this.setState({ task_item: ''})
-   }
+
+    // const newSong = {
+    //   prompt: this.state.prompt,
+    //   subject: this.state.subject,
+    //   argOneFirst: this.state.argOneFirst,
+    //   argOneSecond: this.state.argOneSecond,
+    //   argOneThird: this.state.argOneThird,
+    //   argTwoFirst: this.state.argTwoFirst,
+    //   argTwoSecond: this.state.argTwoSecond,
+    //   argTwoThird: this.state.argTwoThird
+    // }
+
+  }
+
+  // clearForm = () => {
+  //    this.setState({ task_item: ''})
+  //  }
 
   render() {
     return (
