@@ -142,7 +142,9 @@ class App extends Component {
     return (
       <div className="arguably-container">
         <button
-          onClick={this.toggleHidden}>Add A Poll</button>
+          onClick={this.toggleHidden}>
+          Add A Poll
+        </button>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}
