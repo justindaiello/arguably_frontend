@@ -11,6 +11,7 @@ class App extends Component {
     pollView: "t",
     openPolls: [],
     closedPolls: [],
+    isHidden: true
   }
 
   //ES6 arrow functions on methods for binding
@@ -70,6 +71,11 @@ class App extends Component {
     })
   }
 
+  //Toggle whether or not you can see the form.
+  toggleHidden = () => {
+    this.setState({ isHidden: !this.state.isHidden})
+  }
+
   componentDidMount() {
     this.fetchPolls()
   }
@@ -77,7 +83,9 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
-        <Form handCreatePoll={this.handleCreatePoll}/>
+        <button
+          onClick={this.toggleHidden}>Add A Poll</button>
+        {!this.state.isHidden && <Form handCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}
           openPolls={this.state.openPolls}
