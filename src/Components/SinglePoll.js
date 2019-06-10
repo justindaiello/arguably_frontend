@@ -8,8 +8,8 @@ class SinglePoll extends Component {
     super(props)
       this.state = {
         pollAnswers: [
-          { option: props.poll.answer1, votes: 0 },
-          { option: props.poll.answer2, votes: 0 }
+          { option: props.poll.answer1, votes: 10 },
+          { option: props.poll.answer2, votes: 5 }
           // { option: props.poll.answer3, votes: 0}
         ]
     }
@@ -41,9 +41,10 @@ class SinglePoll extends Component {
         <li>{ this.props.poll.bp5 }</li>
         <li>{ this.props.poll.bp6 }</li>
       </ul>
-      {this.props.poll.open ?
-      <h4 onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</h4> :
-      <h4> THIS POLL IS CLOSED </h4> }
+      {this.props.poll.open === 't' ?
+        <h4 onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</h4> :
+        <h4> THIS POLL IS CLOSED </h4>
+      }
       <h4 onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE </h4>
       <Poll
         question={null}
