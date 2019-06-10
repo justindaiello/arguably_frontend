@@ -49,6 +49,27 @@ class App extends Component {
     })
   }
 
+  //Delete Poll
+  handleDelete = (pollId, arrayIndex, array) => {
+    fetch(`http://localhost:3000/polls/${pollId}`, {
+      method: 'DELETE'
+    })
+      .then(data => {
+        this.removeFromArray(array, arrayIndex)
+      })
+      .catch(err => console.log(err))
+  }
+
+  //Remove from array
+  removeFromArray(array, arrayIndex) {
+    this.setState(prevState => {
+      prevState[array].splice(arrayIndex, 1)
+      return {
+        [array]: prevState[array]
+      }
+    })
+  }
+
   componentDidMount() {
     this.fetchPolls()
   }
@@ -56,11 +77,12 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
-        <Form />
+        <Form handCreatePoll={this.handleCreatePoll}/>
         <PollList
           view={this.state.pollView}
           openPolls={this.state.openPolls}
           closedPolls={this.state.closedPolls}
+          handleDelete={this.handleDelete}
         />
       </div>
     );

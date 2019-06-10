@@ -23,7 +23,10 @@ class PollList extends Component {
                   bp5={poll.bp5}
                   bp6={poll.bp6}
                   key={index}
-                  poll={poll}/>
+                  arrayIndex={index}
+                  poll={poll}
+                  handleDelete={this.props.handleDelete}
+                  currentArray="openPolls"/>
               )
           })}
         </div>:
@@ -41,7 +44,10 @@ class PollList extends Component {
                   bp5={poll.bp5}
                   bp6={poll.bp6}
                   key={index}
-                  poll={poll}/>
+                  arrayIndex={index}
+                  poll={poll}
+                  handleDelete={this.props.handleDelete}
+                  currentArray="closedPolls"/>
               )
           })}
         </div> }

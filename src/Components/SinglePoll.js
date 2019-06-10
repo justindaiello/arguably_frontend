@@ -41,6 +41,7 @@ class SinglePoll extends Component {
         <li>{ this.props.poll.bp5 }</li>
         <li>{ this.props.poll.bp6 }</li>
       </ul>
+      <h4 onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE </h4>
       <Poll
         question={null}
         answers={this.state.pollAnswers}
