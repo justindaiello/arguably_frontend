@@ -26,12 +26,13 @@ class PollList extends Component {
                   arrayIndex={index}
                   poll={poll}
                   handleDelete={this.props.handleDelete}
+                  handleCheck={this.props.handleCheck}
                   currentArray="openPolls"/>
               )
           })}
-        </div>:
+        </div> :
         <div>
-          { this.props.openPolls.map((poll, index) => {
+          { this.props.closedPolls.map((poll, index) => {
               return (
                 <SinglePoll
                   question={poll.question}
@@ -47,6 +48,7 @@ class PollList extends Component {
                   arrayIndex={index}
                   poll={poll}
                   handleDelete={this.props.handleDelete}
+                  handleCheck={this.props.handleCheck}
                   currentArray="closedPolls"/>
               )
           })}
