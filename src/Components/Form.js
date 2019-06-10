@@ -29,6 +29,7 @@ handleChange(e) {
 handleSubmit(e) {
   // prevents default behavior of submitting a form
   e.preventDefault()
+  this.props.handleCreateTask(this.state)
   // creating the new song object based off user input
   const newSong = {
     prompt: this.state.prompt,
@@ -50,30 +51,32 @@ handleSubmit(e) {
   render() {
     return (
       <div className="arguably-container">
-        <header className="header">
-          <h1>ARGUABLY.US</h1>
-          <h4>Crowdsource your subjective debates</h4>
-        </header>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='prompt'>Prompt</label>
-            <input type="text" value={this.state.prompt} onChange={this.handleChange} id="prompt"/>
-          <label htmlFor='subject'>Subject</label>
-            <input type="text" value={this.state.subject} onChange={this.handleChange} id="subject"/>
-          <div className="argOne">
-            <label htmlFor='argOneFirst'>First Point</label>
-              <input type="text" value={this.state.argOneFirst} onChange={this.handleChange} id="argOneFirst"/>
-            <label htmlFor='argOneSecond'>Second Point</label>
-              <input type="text" value={this.state.argOneSecond} onChange={this.handleChange} id="argOneSecond"/>
-            <label htmlFor='argOneThird'>Third Point</label>
-              <input type="text" value={this.state.argOneThird} onChange={this.handleChange} id="argOneThird"/>
+          <div className="prompt">
+            <label htmlFor='prompt'>Prompt</label>
+              <input type="text" value={this.state.prompt} onChange={this.handleChange} id="prompt"/>
           </div>
-          <div className="argTwo">
-            <label htmlFor='argTwoFirst'>First Point</label>
-              <input type="text" value={this.state.argTwoFirst} onChange={this.handleChange} id="argTwoFirst"/>
-            <label htmlFor='argTwoSecond'>Second Point</label>
-              <input type="text" value={this.state.argTwoSecond} onChange={this.handleChange} id="argTwoSecond"/>
-            <label htmlFor='argTwoThird'>Third Point</label>
-              <input type="text" value={this.state.argTwoThird} onChange={this.handleChange} id="argTwoThird"/>
+          <div className="args">
+            <div className="argOne">
+              <ul>
+                <li><label htmlFor='argOneFirst'>First Point</label>
+                  <input type="text" value={this.state.argOneFirst} onChange={this.handleChange} id="argOneFirst"/></li>
+                <li><label htmlFor='argOneSecond'>Second Point</label>
+                  <input type="text" value={this.state.argOneSecond} onChange={this.handleChange} id="argOneSecond"/></li>
+                <li><label htmlFor='argOneThird'>Third Point</label>
+                  <input type="text" value={this.state.argOneThird} onChange={this.handleChange} id="argOneThird"/></li>
+              </ul>
+            </div>
+            <div className="argTwo">
+              <ul>
+                <li><label htmlFor='argTwoFirst'>First Point</label>
+                  <input type="text" value={this.state.argTwoFirst} onChange={this.handleChange} id="argTwoFirst"/></li>
+                <li><label htmlFor='argTwoSecond'>Second Point</label>
+                  <input type="text" value={this.state.argTwoSecond} onChange={this.handleChange} id="argTwoSecond"/></li>
+                <li><label htmlFor='argTwoThird'>Third Point</label>
+                  <input type="text" value={this.state.argTwoThird} onChange={this.handleChange} id="argTwoThird"/></li>
+              </ul>
+            </div>
           </div>
           <input classname="submit" type='submit' value='Create Debate' />
         </form>

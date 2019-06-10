@@ -56,6 +56,10 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
+      <header className="header">
+        <h1>ARGUABLY.US</h1>
+        <h4>Crowdsource your subjective debates</h4>
+      </header>
         <Form />
         <PollList
           view={this.state.pollView}
