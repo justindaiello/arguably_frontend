@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 class Form extends Component {
 
   constructor(props) {
@@ -27,8 +25,8 @@ class Form extends Component {
 
   // handle submit of form
   handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.handleCreatePoll(this.state)
+    e.preventDefault();
+    this.props.handleCreatePoll(this.state);
     this.setState({
       question: '',
       answer1: '',
@@ -41,24 +39,8 @@ class Form extends Component {
       bp6: '',
       open: 't'
     })
-
-
-    // const newSong = {
-    //   prompt: this.state.prompt,
-    //   subject: this.state.subject,
-    //   argOneFirst: this.state.argOneFirst,
-    //   argOneSecond: this.state.argOneSecond,
-    //   argOneThird: this.state.argOneThird,
-    //   argTwoFirst: this.state.argTwoFirst,
-    //   argTwoSecond: this.state.argTwoSecond,
-    //   argTwoThird: this.state.argTwoThird
-    // }
-
   }
 
-  // clearForm = () => {
-  //    this.setState({ task_item: ''})
-  //  }
 
   render() {
     return (
@@ -86,7 +68,7 @@ class Form extends Component {
             <label htmlFor='argTwoThird'>Third Point</label>
               <input type="text" value={this.state.bp6} onChange={this.handleChange} id="bp6"/>
           </div>
-          <input className="submit" type='submit' value='Create Debate' />
+          <input className="submit" type="submit" value="Create Debate" />
         </form>
       </div>
     );

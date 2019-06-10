@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   //Create a new Poll
-  handleCreatePoll(poll) {
+  handleCreatePoll = (poll) => {
     fetch('http://localhost:3000/polls', {
       body: JSON.stringify(poll),
       method: 'POST',
@@ -66,7 +66,6 @@ class App extends Component {
     .then(data => {
       this.updateArray(data, 'openPolls')
       this.handleView("t")
-      this.fetchPolls()
     })
     .catch(err => console.log(err))
   }
@@ -87,10 +86,10 @@ class App extends Component {
     fetch(`http://localhost:3000/polls/${pollId}`, {
       method: 'DELETE'
     })
-      .then(data => {
-        this.removeFromArray(array, arrayIndex)
-      })
-      .catch(err => console.log(err))
+    .then(data => {
+      this.removeFromArray(array, arrayIndex)
+    })
+    .catch(err => console.log(err))
   }
 
   //Remove from array
@@ -123,6 +122,8 @@ class App extends Component {
           openPolls={this.state.openPolls}
           closedPolls={this.state.closedPolls}
           handleDelete={this.handleDelete}
+          handleView={this.handleView}
+          // handleDelete={}
         />
       </div>
     );
