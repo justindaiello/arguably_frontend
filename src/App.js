@@ -50,15 +50,46 @@ class App extends Component {
     })
   }
 
+  //Create a new Poll
+  handleCreatePoll = (poll) => {
+    fetch('http://localhost:3000/polls', {
+      body: JSON.stringify(poll),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(createdPoll => {
+      return createdPoll.json()
+    })
+    .then(data => {
+      this.updateArray(data, 'openPolls')
+      this.handleView("t")
+    })
+    .catch(err => console.log(err))
+  }
+
+  //Update array with new poll
+  updateArray = (poll, array) => {
+    this.setState( prevState => {
+      prevState[array].push(poll)
+      console.log(prevState)
+      return {
+        [array]: prevState[array]
+      }
+    })
+  }
+
   //Delete Poll
   handleDelete = (pollId, arrayIndex, array) => {
     fetch(`http://localhost:3000/polls/${pollId}`, {
       method: 'DELETE'
     })
-      .then(data => {
-        this.removeFromArray(array, arrayIndex)
-      })
-      .catch(err => console.log(err))
+    .then(data => {
+      this.removeFromArray(array, arrayIndex)
+    })
+    .catch(err => console.log(err))
   }
 
   //Remove from array
@@ -85,12 +116,14 @@ class App extends Component {
       <div className="arguably-container">
         <button
           onClick={this.toggleHidden}>Add A Poll</button>
-        {!this.state.isHidden && <Form handCreatePoll={this.handleCreatePoll}/>}
+        {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}
           openPolls={this.state.openPolls}
           closedPolls={this.state.closedPolls}
           handleDelete={this.handleDelete}
+          handleView={this.handleView}
+          // handleDelete={}
         />
       </div>
     );
