@@ -23,7 +23,7 @@ class App extends Component {
 
   //Grab polls from our server
   fetchPolls = () => {
-    fetch('http://localhost:3000/polls')
+    fetch('https://arguably-us.herokuapp.com/polls')
     .then(res => res.json())
     .then(data => {
       this.sortPolls(data);
@@ -52,7 +52,7 @@ class App extends Component {
 
   //Create a new Poll
   handleCreatePoll = (poll) => {
-    fetch('http://localhost:3000/polls', {
+    fetch('https://arguably-us.herokuapp.com/polls', {
       body: JSON.stringify(poll),
       method: 'POST',
       headers: {
@@ -81,9 +81,34 @@ class App extends Component {
     })
   }
 
+  //Update Poll to be closed.
+  handleCheck = (poll, arrayIndex, currentArray) => {
+    poll.open = !poll.open
+    fetch(`https://arguably-us.herokuapp.com/polls/${poll.id}`, {
+      body: JSON.stringify(poll),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(updatedPoll => {
+      return updatedPoll.json()
+    })
+    .then(data => {
+      this.removeFromArray(currentArray, arrayIndex)
+      if(currentArray === "openPolls") {
+        this.updateArray(data, "closedPolls")
+      } else {
+        this.updateArray(data, "openPolls")
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
   //Delete Poll
   handleDelete = (pollId, arrayIndex, array) => {
-    fetch(`http://localhost:3000/polls/${pollId}`, {
+    fetch(`https://arguably-us.herokuapp.com/polls/${pollId}`, {
       method: 'DELETE'
     })
     .then(data => {
@@ -93,7 +118,7 @@ class App extends Component {
   }
 
   //Remove from array
-  removeFromArray(array, arrayIndex) {
+  removeFromArray = (array, arrayIndex) => {
     this.setState(prevState => {
       prevState[array].splice(arrayIndex, 1)
       return {
@@ -109,6 +134,8 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchPolls()
+    console.log(this.state.openPolls);
+    console.log(this.state.closedPolls);
   }
 
   render() {
@@ -119,7 +146,9 @@ class App extends Component {
         <h4 className="slogan">Crowdsource your subjective debates</h4>
       </header>
         <button
-          onClick={this.toggleHidden}>Add A Poll</button>
+          onClick={this.toggleHidden}>
+          Add A Poll
+        </button>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}
@@ -127,7 +156,7 @@ class App extends Component {
           closedPolls={this.state.closedPolls}
           handleDelete={this.handleDelete}
           handleView={this.handleView}
-          // handleDelete={}
+          handleCheck={this.handleCheck}
         />
       </div>
     );
