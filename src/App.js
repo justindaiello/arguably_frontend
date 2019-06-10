@@ -81,6 +81,31 @@ class App extends Component {
     })
   }
 
+  //Update Poll to be closed.
+  handleCheck = (poll, arrayIndex, currentArray) => {
+    poll.open = !poll.open
+    fetch(`http://localhost:3000/polls/${poll.id}`, {
+      body: JSON.stringify(poll),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(updatedPoll => {
+      return updatedPoll.json()
+    })
+    .then(data => {
+      this.removeFromArray(currentArray, arrayIndex)
+      if(currentArray === "openPolls") {
+        this.updateArray(data, "closedPolls")
+      } else {
+        this.updateArray(data, "openPolls")
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
   //Delete Poll
   handleDelete = (pollId, arrayIndex, array) => {
     fetch(`http://localhost:3000/polls/${pollId}`, {
@@ -93,7 +118,7 @@ class App extends Component {
   }
 
   //Remove from array
-  removeFromArray(array, arrayIndex) {
+  removeFromArray = (array, arrayIndex) => {
     this.setState(prevState => {
       prevState[array].splice(arrayIndex, 1)
       return {
@@ -109,6 +134,8 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchPolls()
+    console.log(this.state.openPolls);
+    console.log(this.state.closedPolls);
   }
 
   render() {
@@ -123,7 +150,7 @@ class App extends Component {
           closedPolls={this.state.closedPolls}
           handleDelete={this.handleDelete}
           handleView={this.handleView}
-          // handleDelete={}
+          handleCheck={this.handleCheck}
         />
       </div>
     );
