@@ -75,7 +75,7 @@ handleSubmit(e) {
             <label htmlFor='argTwoThird'>Third Point</label>
               <input type="text" value={this.state.argTwoThird} onChange={this.handleChange} id="argTwoThird"/>
           </div>
-          <input classname="submit" type='submit' value='Create Debate' />
+          <input className="submit" type='submit' value='Create Debate' />
         </form>
       </div>
     );
