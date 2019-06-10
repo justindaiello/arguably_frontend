@@ -12,7 +12,11 @@ code {
     monospace;
 } */
 
-.header {
+.appName {
+  text-align: center;
+}
+
+.slogan {
   text-align: center;
 }
 

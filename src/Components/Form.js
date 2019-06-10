@@ -78,7 +78,7 @@ handleSubmit(e) {
               </ul>
             </div>
           </div>
-          <input classname="submit" type='submit' value='Create Debate' />
+          <input className="submit" type='submit' value='Create Debate' />
         </form>
       </div>
     );

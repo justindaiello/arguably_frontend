@@ -11,6 +11,7 @@ class App extends Component {
     pollView: "t",
     openPolls: [],
     closedPolls: [],
+    isHidden: true
   }
 
   //ES6 arrow functions on methods for binding
@@ -49,6 +50,32 @@ class App extends Component {
     })
   }
 
+  //Delete Poll
+  handleDelete = (pollId, arrayIndex, array) => {
+    fetch(`http://localhost:3000/polls/${pollId}`, {
+      method: 'DELETE'
+    })
+      .then(data => {
+        this.removeFromArray(array, arrayIndex)
+      })
+      .catch(err => console.log(err))
+  }
+
+  //Remove from array
+  removeFromArray(array, arrayIndex) {
+    this.setState(prevState => {
+      prevState[array].splice(arrayIndex, 1)
+      return {
+        [array]: prevState[array]
+      }
+    })
+  }
+
+  //Toggle whether or not you can see the form.
+  toggleHidden = () => {
+    this.setState({ isHidden: !this.state.isHidden})
+  }
+
   componentDidMount() {
     this.fetchPolls()
   }
@@ -57,14 +84,17 @@ class App extends Component {
     return (
       <div className="arguably-container">
       <header className="header">
-        <h1>ARGUABLY.US</h1>
-        <h4>Crowdsource your subjective debates</h4>
+        <h1 className="appName">ARGUABLY.US</h1>
+        <h4 className="slogan">Crowdsource your subjective debates</h4>
       </header>
-        <Form />
+        <button
+          onClick={this.toggleHidden}>Add A Poll</button>
+        {!this.state.isHidden && <Form handCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}
           openPolls={this.state.openPolls}
           closedPolls={this.state.closedPolls}
+          handleDelete={this.handleDelete}
         />
       </div>
     );
