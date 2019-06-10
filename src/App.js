@@ -23,7 +23,7 @@ class App extends Component {
 
   //Grab polls from our server
   fetchPolls = () => {
-    fetch('http://localhost:3000/polls')
+    fetch('https://arguably-us.herokuapp.com/polls')
     .then(res => res.json())
     .then(data => {
       this.sortPolls(data);
@@ -52,7 +52,7 @@ class App extends Component {
 
   //Create a new Poll
   handleCreatePoll = (poll) => {
-    fetch('http://localhost:3000/polls', {
+    fetch('https://arguably-us.herokuapp.com/polls', {
       body: JSON.stringify(poll),
       method: 'POST',
       headers: {
@@ -84,7 +84,7 @@ class App extends Component {
   //Update Poll to be closed.
   handleCheck = (poll, arrayIndex, currentArray) => {
     poll.open = !poll.open
-    fetch(`http://localhost:3000/polls/${poll.id}`, {
+    fetch(`https://arguably-us.herokuapp.com/polls/${poll.id}`, {
       body: JSON.stringify(poll),
       method: 'PUT',
       headers: {
@@ -108,7 +108,7 @@ class App extends Component {
 
   //Delete Poll
   handleDelete = (pollId, arrayIndex, array) => {
-    fetch(`http://localhost:3000/polls/${pollId}`, {
+    fetch(`https://arguably-us.herokuapp.com/polls/${pollId}`, {
       method: 'DELETE'
     })
     .then(data => {
