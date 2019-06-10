@@ -65,16 +65,16 @@ class App extends Component {
     })
     .then(data => {
       this.updateArray(data, 'openPolls')
-      this.handleView('t')
-      // this.fetchTasks()
+      this.handleView("t")
+      this.fetchPolls()
     })
     .catch(err => console.log(err))
   }
 
   //Update array with new poll
-  updateArray(task, array) {
+  updateArray = (poll, array) => {
     this.setState( prevState => {
-      prevState[array].push(task)
+      prevState[array].push(poll)
       console.log(prevState)
       return {
         [array]: prevState[array]

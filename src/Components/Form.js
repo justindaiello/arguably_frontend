@@ -65,24 +65,26 @@ class Form extends Component {
       <div className="arguably-container">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='prompt'>Prompt</label>
-            <input type="text" value={this.state.prompt} onChange={this.handleChange} id="prompt"/>
-          <label htmlFor='subject'>Subject</label>
-            <input type="text" value={this.state.subject} onChange={this.handleChange} id="subject"/>
+            <input type="text" value={this.state.question} onChange={this.handleChange} id="question"/>
+          <label htmlFor='Your Answer'>Your Answer</label>
+            <input type="text" value={this.state.answer1} onChange={this.handleChange} id="answer1"/>
+          <label htmlFor='Their Answer'>Their Answer</label>
+            <input type="text" value={this.state.answer2} onChange={this.handleChange} id="answer2"/>
           <div className="argOne">
             <label htmlFor='argOneFirst'>First Point</label>
-              <input type="text" value={this.state.argOneFirst} onChange={this.handleChange} id="argOneFirst"/>
+              <input type="text" value={this.state.bp1} onChange={this.handleChange} id="bp1"/>
             <label htmlFor='argOneSecond'>Second Point</label>
-              <input type="text" value={this.state.argOneSecond} onChange={this.handleChange} id="argOneSecond"/>
+              <input type="text" value={this.state.bp2} onChange={this.handleChange} id="bp2"/>
             <label htmlFor='argOneThird'>Third Point</label>
-              <input type="text" value={this.state.argOneThird} onChange={this.handleChange} id="argOneThird"/>
+              <input type="text" value={this.state.bp3} onChange={this.handleChange} id="bp3"/>
           </div>
           <div className="argTwo">
             <label htmlFor='argTwoFirst'>First Point</label>
-              <input type="text" value={this.state.argTwoFirst} onChange={this.handleChange} id="argTwoFirst"/>
+              <input type="text" value={this.state.bp4} onChange={this.handleChange} id="bp4"/>
             <label htmlFor='argTwoSecond'>Second Point</label>
-              <input type="text" value={this.state.argTwoSecond} onChange={this.handleChange} id="argTwoSecond"/>
+              <input type="text" value={this.state.bp5} onChange={this.handleChange} id="bp5"/>
             <label htmlFor='argTwoThird'>Third Point</label>
-              <input type="text" value={this.state.argTwoThird} onChange={this.handleChange} id="argTwoThird"/>
+              <input type="text" value={this.state.bp6} onChange={this.handleChange} id="bp6"/>
           </div>
           <input className="submit" type='submit' value='Create Debate' />
         </form>
