@@ -47,7 +47,7 @@ class Form extends Component {
       <div className="arguably-container">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='prompt'>Prompt</label>
-            <input type="text" value={this.state.question} onChange={this.handleChange} id="question"/>
+            <textarea type="text" value={this.state.question} onChange={this.handleChange} id="question"></textarea>
           <label htmlFor='Your Answer'>Your Answer</label>
             <input type="text" value={this.state.answer1} onChange={this.handleChange} id="answer1"/>
           <label htmlFor='Their Answer'>Their Answer</label>

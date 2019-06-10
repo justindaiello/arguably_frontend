@@ -141,6 +141,10 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
+      <header className="header">
+        <h1 className="appName">ARGUABLY.US</h1>
+        <h4 className="slogan">Crowdsource your subjective debates</h4>
+      </header>
         <button
           onClick={this.toggleHidden}>
           Add A Poll
