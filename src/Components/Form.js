@@ -50,10 +50,6 @@ handleSubmit(e) {
   render() {
     return (
       <div className="arguably-container">
-        <header className="header">
-          <h1>ARGUABLY.US</h1>
-          <h4>Crowdsource your subjective debates</h4>
-        </header>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='prompt'>Prompt</label>
             <input type="text" value={this.state.prompt} onChange={this.handleChange} id="prompt"/>
