@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 
 
 class Form extends Component {
-  constructor () {
-    super()
-    this.state = {
+
+  state = {
       prompt: '',
       subject: '',
       argOneFirst: '',
@@ -14,10 +13,6 @@ class Form extends Component {
       argTwoFirst: '',
       argTwoSecond: '',
       argTwoThird: ''
-    }
-    // binding methods
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   // handle input change
