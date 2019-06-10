@@ -54,7 +54,7 @@ handleSubmit(e) {
         <form onSubmit={this.handleSubmit}>
           <div className="prompt">
             <label htmlFor='prompt'>Prompt</label>
-              <input type="text" value={this.state.prompt} onChange={this.handleChange} id="prompt"/>
+              <textarea type="text" value={this.state.prompt} onChange={this.handleChange} id="prompt"></textarea>
           </div>
           <div className="args">
             <div className="argOne">
