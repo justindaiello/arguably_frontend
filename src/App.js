@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Components/Form'
 import PollList from './Components/PollList';
+import Header from './Components/Header'
 import './App.css';
 
 
@@ -23,7 +24,7 @@ class App extends Component {
 
   //Grab polls from our server
   fetchPolls = () => {
-    fetch('http://localhost:3000/polls')
+    fetch('https://arguably-us.herokuapp.com/polls')
     .then(res => res.json())
     .then(data => {
       this.sortPolls(data);
@@ -52,7 +53,7 @@ class App extends Component {
 
   //Create a new Poll
   handleCreatePoll = (poll) => {
-    fetch('http://localhost:3000/polls', {
+    fetch('https://arguably-us.herokuapp.com/polls', {
       body: JSON.stringify(poll),
       method: 'POST',
       headers: {
@@ -84,7 +85,7 @@ class App extends Component {
   //Update Poll to be closed.
   handleCheck = (poll, arrayIndex, currentArray) => {
     poll.open = !poll.open
-    fetch(`http://localhost:3000/polls/${poll.id}`, {
+    fetch(`https://arguably-us.herokuapp.com/polls/${poll.id}`, {
       body: JSON.stringify(poll),
       method: 'PUT',
       headers: {
@@ -108,7 +109,7 @@ class App extends Component {
 
   //Delete Poll
   handleDelete = (pollId, arrayIndex, array) => {
-    fetch(`http://localhost:3000/polls/${pollId}`, {
+    fetch(`https://arguably-us.herokuapp.com/polls/${pollId}`, {
       method: 'DELETE'
     })
     .then(data => {
@@ -141,10 +142,10 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
-      <header className="header">
-        <h1 className="appName">ARGUABLY.US</h1>
-        <h4 className="slogan">Crowdsource your subjective debates</h4>
-      </header>
+        <Header
+          pollView={this.state.pollView}
+          handleView={this.handleView}
+        />
         <button
           onClick={this.toggleHidden}>
           Add A Poll

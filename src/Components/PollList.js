@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SinglePoll from './SinglePoll'
 
 
-class PollList extends Component {
+const PollList = (props) => {
 
-
-  render() {
     return(
       <div className="pollList">
-        {this.props.view === "t" ?
+        {props.view === "t" ?
         <div>
-          { this.props.openPolls.map((poll, index) => {
+          { props.openPolls.map((poll, index) => {
               return (
                 <SinglePoll
                   question={poll.question}
@@ -25,14 +23,14 @@ class PollList extends Component {
                   key={index}
                   arrayIndex={index}
                   poll={poll}
-                  handleDelete={this.props.handleDelete}
-                  handleCheck={this.props.handleCheck}
+                  handleDelete={props.handleDelete}
+                  handleCheck={props.handleCheck}
                   currentArray="openPolls"/>
               )
           })}
         </div> :
         <div>
-          { this.props.closedPolls.map((poll, index) => {
+          { props.closedPolls.map((poll, index) => {
               return (
                 <SinglePoll
                   question={poll.question}
@@ -47,15 +45,14 @@ class PollList extends Component {
                   key={index}
                   arrayIndex={index}
                   poll={poll}
-                  handleDelete={this.props.handleDelete}
-                  handleCheck={this.props.handleCheck}
+                  handleDelete={props.handleDelete}
+                  handleCheck={props.handleCheck}
                   currentArray="closedPolls"/>
               )
           })}
         </div> }
       </div>
     )
-  }
 
 }
 
