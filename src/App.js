@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Components/Form'
 import PollList from './Components/PollList';
+import Header from './Components/Header'
 import './App.css';
 
 
@@ -141,10 +142,7 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
-      <header className="header">
-        <h1 className="appName">ARGUABLY.US</h1>
-        <h4 className="slogan">Crowdsource your subjective debates</h4>
-      </header>
+        <Header />
         <button
           onClick={this.toggleHidden}>
           Add A Poll
