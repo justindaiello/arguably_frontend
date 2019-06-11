@@ -3,6 +3,7 @@ import Form from './Components/Form'
 import PollList from './Components/PollList';
 import Header from './Components/Header'
 import './App.css';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -50,6 +51,7 @@ class App extends Component {
       closedPolls: closedPolls
     })
   }
+
 
   //Create a new Poll
   handleCreatePoll = (poll) => {
@@ -149,7 +151,7 @@ class App extends Component {
         <button
           onClick={this.toggleHidden}>
           Add A Poll
-        </button>
+        </Button>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}

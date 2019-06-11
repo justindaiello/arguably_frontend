@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card, ListGroupItem, ListGroup } from 'react-bootstrap';
 
 class Form extends Component {
 
@@ -44,31 +45,41 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="arguably-container">
+      <div className="container">
         <form onSubmit={this.handleSubmit}>
+          <div className="prompt">
           <label htmlFor='prompt'>Prompt</label>
             <textarea type="text" value={this.state.question} onChange={this.handleChange} id="question"></textarea>
-          <label htmlFor='Your Answer'>Your Answer</label>
-            <input type="text" value={this.state.answer1} onChange={this.handleChange} id="answer1"/>
-          <label htmlFor='Their Answer'>Their Answer</label>
-            <input type="text" value={this.state.answer2} onChange={this.handleChange} id="answer2"/>
+          </div>
           <div className="argOne">
-            <label htmlFor='argOneFirst'>First Point</label>
-              <input type="text" value={this.state.bp1} onChange={this.handleChange} id="bp1"/>
-            <label htmlFor='argOneSecond'>Second Point</label>
-              <input type="text" value={this.state.bp2} onChange={this.handleChange} id="bp2"/>
-            <label htmlFor='argOneThird'>Third Point</label>
-              <input type="text" value={this.state.bp3} onChange={this.handleChange} id="bp3"/>
+            <Card className="cardClass" style={{ width: '16rem' }}>
+              <ListGroup className="list-group-flush">
+                <ListGroupItem><label htmlFor='argOneFirst'>First Point</label>
+                  <input type="text" value={this.state.bp1} onChange={this.handleChange} id="bp1"/></ListGroupItem>
+                <ListGroupItem><label htmlFor='argOneSecond'>Second Point</label>
+                  <input type="text" value={this.state.bp2} onChange={this.handleChange} id="bp2"/></ListGroupItem>
+                <ListGroupItem><label htmlFor='argOneThird'>Third Point</label>
+                  <input type="text" value={this.state.bp3} onChange={this.handleChange} id="bp3"/></ListGroupItem>
+                <ListGroupItem><label htmlFor='Your Answer'>Answer One</label>
+                  <input type="text" value={this.state.answer1} onChange={this.handleChange} id="answer1"/></ListGroupItem>
+              </ListGroup>
+            </Card>
+            <Card className="addCard" style={{ width: '16rem' }}>
+              <ListGroup className="list-group-flush">
+                <ListGroupItem><label htmlFor='argTwoFirst'>First Point</label>
+                  <input type="text" value={this.state.bp4} onChange={this.handleChange} id="bp4"/></ListGroupItem>
+                <ListGroupItem><label htmlFor='argTwoSecond'>Second Point</label>
+                  <input type="text" value={this.state.bp5} onChange={this.handleChange} id="bp5"/></ListGroupItem>
+                <ListGroupItem><label htmlFor='argTwoThird'>Third Point</label>
+                  <input type="text" value={this.state.bp6} onChange={this.handleChange} id="bp6"/></ListGroupItem>
+                <ListGroupItem><label htmlFor='Their Answer'> Answer Two</label>
+                  <input type="text" value={this.state.answer2} onChange={this.handleChange} id="answer2"/></ListGroupItem>
+              </ListGroup>
+            </Card>
           </div>
-          <div className="argTwo">
-            <label htmlFor='argTwoFirst'>First Point</label>
-              <input type="text" value={this.state.bp4} onChange={this.handleChange} id="bp4"/>
-            <label htmlFor='argTwoSecond'>Second Point</label>
-              <input type="text" value={this.state.bp5} onChange={this.handleChange} id="bp5"/>
-            <label htmlFor='argTwoThird'>Third Point</label>
-              <input type="text" value={this.state.bp6} onChange={this.handleChange} id="bp6"/>
+          <div className="createButton">
+            <input className="submit" type="submit" value="Create Debate" />
           </div>
-          <input className="submit" type="submit" value="Create Debate" />
         </form>
       </div>
     );
