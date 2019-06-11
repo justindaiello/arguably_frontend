@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Poll from 'react-polls';
-import Button from 'react-bootstrap/Button';
+import { Card, ListGroupItem, ListGroup, Button } from 'react-bootstrap';
 
 class SinglePoll extends Component {
 
@@ -30,29 +30,37 @@ class SinglePoll extends Component {
   render() {
     return(
       <div>
-      <h1> { this.props.poll.question } </h1>
-      <ul>
-        <li>{ this.props.poll.bp1 }</li>
-        <li>{ this.props.poll.bp2 }</li>
-        <li>{ this.props.poll.bp3 }</li>
-      </ul>
-      <ul>
-        <li>{ this.props.poll.bp4 }</li>
-        <li>{ this.props.poll.bp5 }</li>
-        <li>{ this.props.poll.bp6 }</li>
-      </ul>
-      {this.props.poll.open === 't' ?
-        <Button variant="primary" onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</Button> :
-        <h4> THIS POLL IS CLOSED </h4>
-      }
-      <Button variant="secondary" onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE </Button>
-      <div className="pollPoll">
-      <Poll
-        question={null}
-        answers={this.state.pollAnswers}
-        onVote={this.handleVote}
-        noStorage={true} />
-      </div>
+      <h2 class="bigQ"> { this.props.poll.question } </h2>
+        <div className="argTwo">
+          <Card style={{ width: '30rem' }}>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>{ this.props.poll.bp1 }</ListGroupItem>
+              <ListGroupItem>{ this.props.poll.bp2 }</ListGroupItem>
+              <ListGroupItem>{ this.props.poll.bp3 }</ListGroupItem>
+            </ListGroup>
+          </Card>
+          <Card style={{ width: '30rem' }}>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>{ this.props.poll.bp4 }</ListGroupItem>
+              <ListGroupItem>{ this.props.poll.bp5 }</ListGroupItem>
+              <ListGroupItem>{ this.props.poll.bp6 }</ListGroupItem>
+            </ListGroup>
+          </Card>
+          </div>
+        <div className="pollPoll">
+        <Poll
+          question={null}
+          answers={this.state.pollAnswers}
+          onVote={this.handleVote}
+          noStorage={true} />
+        </div>
+        <div className="closeDel">
+        {this.props.poll.open === 't' ?
+          <Button variant="primary" onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</Button> :
+          <h4> THIS POLL IS CLOSED </h4>
+        }
+        <Button variant="secondary" onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE POLL </Button>
+        </div>
       </div>
     )
   }

@@ -46,10 +46,25 @@ code {
   display: flex;
 }
 
+.argTwo {
+  display: flex;
+  justify-content: center;
+}
+
+.bigQ {
+  text-align: center;
+}
+
+.closeDel {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
 .createButton {
   display: flex;
   justify-content: center;
   margin-top: 1em;
+  margin-bottom: 3em;
 }
 
 .cardClass {
@@ -61,9 +76,13 @@ code {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .pollPoll {
   width: 50%;
+}
+
+.list-group-flush {
+  display: flex;
 }
