@@ -142,7 +142,9 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
-        <Header />
+        <Header
+          pollView={this.state.pollView}
+          handleView={this.state.handleView}/>
         <button
           onClick={this.toggleHidden}>
           Add A Poll
