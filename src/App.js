@@ -151,7 +151,7 @@ class App extends Component {
         <button
           onClick={this.toggleHidden}>
           Add A Poll
-        </Button>
+        </button>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}
