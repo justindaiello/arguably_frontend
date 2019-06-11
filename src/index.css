@@ -37,3 +37,33 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.addPoll {
+  margin-bottom: 2em;
+}
+
+.argOne {
+  display: flex;
+}
+
+.createButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.cardClass {
+  display: flex;
+  justify-content: center;
+}
+
+.prompt {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.pollPoll {
+  width: 50%;
+}

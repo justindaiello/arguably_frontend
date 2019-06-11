@@ -47,10 +47,12 @@ class Form extends Component {
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit}>
+          <div className="prompt">
           <label htmlFor='prompt'>Prompt</label>
             <textarea type="text" value={this.state.question} onChange={this.handleChange} id="question"></textarea>
-          <Card style={{ width: '18rem' }}>
-            <div className="argOne">
+          </div>
+          <div className="argOne">
+            <Card className="cardClass" style={{ width: '16rem' }}>
               <ListGroup className="list-group-flush">
                 <ListGroupItem><label htmlFor='argOneFirst'>First Point</label>
                   <input type="text" value={this.state.bp1} onChange={this.handleChange} id="bp1"/></ListGroupItem>
@@ -61,10 +63,8 @@ class Form extends Component {
                 <ListGroupItem><label htmlFor='Your Answer'>Answer One</label>
                   <input type="text" value={this.state.answer1} onChange={this.handleChange} id="answer1"/></ListGroupItem>
               </ListGroup>
-            </div>
-          </Card>
-          <Card className="addCard" style={{ width: '18rem' }}>
-            <div className="argTwo">
+            </Card>
+            <Card className="addCard" style={{ width: '16rem' }}>
               <ListGroup className="list-group-flush">
                 <ListGroupItem><label htmlFor='argTwoFirst'>First Point</label>
                   <input type="text" value={this.state.bp4} onChange={this.handleChange} id="bp4"/></ListGroupItem>
@@ -75,9 +75,11 @@ class Form extends Component {
                 <ListGroupItem><label htmlFor='Their Answer'> Answer Two</label>
                   <input type="text" value={this.state.answer2} onChange={this.handleChange} id="answer2"/></ListGroupItem>
               </ListGroup>
-            </div>
-          </Card>
-          <input className="submit" type="submit" value="Create Debate" />
+            </Card>
+          </div>
+          <div className="createButton">
+            <input className="submit" type="submit" value="Create Debate" />
+          </div>
         </form>
       </div>
     );

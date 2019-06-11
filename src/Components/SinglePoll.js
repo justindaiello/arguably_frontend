@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Poll from 'react-polls';
-
+import Button from 'react-bootstrap/Button';
 
 class SinglePoll extends Component {
 
@@ -42,15 +42,17 @@ class SinglePoll extends Component {
         <li>{ this.props.poll.bp6 }</li>
       </ul>
       {this.props.poll.open === 't' ?
-        <h4 onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</h4> :
+        <Button variant="primary" onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</Button> :
         <h4> THIS POLL IS CLOSED </h4>
       }
-      <h4 onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE </h4>
+      <Button variant="secondary" onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE </Button>
+      <div className="pollPoll">
       <Poll
         question={null}
         answers={this.state.pollAnswers}
         onVote={this.handleVote}
         noStorage={true} />
+      </div>
       </div>
     )
   }

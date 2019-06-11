@@ -147,7 +147,7 @@ class App extends Component {
         <h1 className="appName">ARGUABLY.US</h1>
         <h4 className="slogan">Crowdsource your subjective debates</h4>
       </header>
-        <Button variant="secondary" size="lg" block
+        <Button className="addPoll" variant="secondary" size="lg" block
           onClick={this.toggleHidden}>
           Add A Poll
         </Button>
