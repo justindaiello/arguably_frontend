@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from './Components/Form'
 import PollList from './Components/PollList';
 import './App.css';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -49,6 +50,7 @@ class App extends Component {
       closedPolls: closedPolls
     })
   }
+
 
   //Create a new Poll
   handleCreatePoll = (poll) => {
@@ -145,10 +147,10 @@ class App extends Component {
         <h1 className="appName">ARGUABLY.US</h1>
         <h4 className="slogan">Crowdsource your subjective debates</h4>
       </header>
-        <button
+        <Button variant="secondary" size="lg" block
           onClick={this.toggleHidden}>
           Add A Poll
-        </button>
+        </Button>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}

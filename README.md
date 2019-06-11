@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -74,3 +75,6 @@ Arguably App by Ian and Justin.
 =======
 Arguably App by Ian and Justin.
 >>>>>>> e4f13a4f36ed5f5847b01fb750edb8f6d20ab6e6
+=======
+Arguably App by Ian and Justin.
+>>>>>>> 2c6e78b75fa020dcd69b3e8e004dd846437a1fdc

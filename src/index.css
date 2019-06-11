@@ -12,6 +12,10 @@ code {
     monospace;
 } */
 
+.container {
+  display: flex;
+  justify-content: center;
+}
 .appName {
   text-align: center;
 }
@@ -20,10 +24,6 @@ code {
   text-align: center;
 }
 
-.args {
-  display: flex;
-  justify-content: center;
-}
 
 .prompt {
   text-align: center;
@@ -31,4 +31,9 @@ code {
 
 .header {
   background-color: lightblue;
+}
+
+.addCard {
+  display: flex;
+  justify-content: center;
 }
