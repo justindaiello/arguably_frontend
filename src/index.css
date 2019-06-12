@@ -3,14 +3,6 @@
   --gray: #3C595A;
 }
 
-#root {
-
-}
-
-.poll .answers .option.white:hover, .poll .answers .option.white:active {
-	background: #D86334;
-}
-
 .arguably-container {
   max-width: 100%;
   height: auto;
@@ -92,7 +84,8 @@
 .pollBtn:hover,
 .addPoll:hover,
 .closePoll:hover,
-.deletePoll:hover {
+.deletePoll:hover,
+.submit:hover {
   /* visual */
   border: 2px solid white;
   border-radius: 2px;
@@ -168,4 +161,8 @@
 
 .list-group-flush {
   display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+
 }

@@ -8,9 +8,8 @@ class SinglePoll extends Component {
     super(props)
       this.state = {
         pollAnswers: [
-          { option: props.poll.answer1, votes: 10 },
-          { option: props.poll.answer2, votes: 5 }
-          // { option: props.poll.answer3, votes: 0}
+          { option: props.poll.answer1, votes: 15 }, //props.poll.votes1
+          { option: props.poll.answer2, votes: 20 }  //props.poll.votes2
         ]
     }
   }
@@ -26,11 +25,10 @@ class SinglePoll extends Component {
     })
   }
 
-
   render() {
     return(
       <div>
-      <h2 class="bigQ"> { this.props.poll.question } </h2>
+      <h2 className="bigQ"> { this.props.poll.question } </h2>
         <div className="argTwo">
           <Card style={{ width: '30rem' }}>
             <ListGroup className="list-group-flush">
@@ -49,6 +47,7 @@ class SinglePoll extends Component {
           </div>
         <div className="vote">
           <Poll
+            key={this.props.index}
             question={null}
             answers={this.state.pollAnswers}
             onVote={this.handleVote}

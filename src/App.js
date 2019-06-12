@@ -146,7 +146,7 @@ class App extends Component {
           pollView={this.state.pollView}
           handleView={this.handleView}
         />
-        <div class="pollDiv">
+        <div className="pollDiv">
           <Button
             className="addPoll"
             onClick={this.toggleHidden}>

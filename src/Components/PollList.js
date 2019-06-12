@@ -14,6 +14,8 @@ const PollList = (props) => {
                   question={poll.question}
                   answer1={poll.answer1}
                   answer2={poll.answer2}
+                  votes1={poll.votes1}
+                  votes2={poll.votes2}
                   bp1={poll.bp1}
                   bp2={poll.bp2}
                   bp3={poll.bp3}
@@ -36,6 +38,8 @@ const PollList = (props) => {
                   question={poll.question}
                   answer1={poll.answer1}
                   answer2={poll.answer2}
+                  votes1={poll.votes1}
+                  votes2={poll.votes2}
                   bp1={poll.bp1}
                   bp2={poll.bp2}
                   bp3={poll.bp3}
