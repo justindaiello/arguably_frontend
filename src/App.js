@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Form from './Components/Form'
 import PollList from './Components/PollList';
-import './App.css';
-
+import Header from './Components/Header';
+import Button from 'react-bootstrap/Button';
 
 
 class App extends Component {
@@ -49,6 +49,7 @@ class App extends Component {
       closedPolls: closedPolls
     })
   }
+
 
   //Create a new Poll
   handleCreatePoll = (poll) => {
@@ -141,14 +142,17 @@ class App extends Component {
   render() {
     return (
       <div className="arguably-container">
-      <header className="header">
-        <h1 className="appName">ARGUABLY.US</h1>
-        <h4 className="slogan">Crowdsource your subjective debates</h4>
-      </header>
-        <button
-          onClick={this.toggleHidden}>
-          Add A Poll
-        </button>
+        <Header
+          pollView={this.state.pollView}
+          handleView={this.handleView}
+        />
+        <div class="pollDiv">
+          <Button
+            className="addPoll"
+            onClick={this.toggleHidden}>
+            Add A Poll
+          </Button>
+        </div>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}

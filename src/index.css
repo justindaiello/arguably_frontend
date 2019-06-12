@@ -1,34 +1,171 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --orange: #D86334;
+  --gray: #3C595A;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
+#root {
 
-.appName {
-  text-align: center;
 }
 
-.slogan {
-  text-align: center;
+.poll .answers .option.white:hover, .poll .answers .option.white:active {
+	background: #D86334;
 }
 
-.args {
+.arguably-container {
+  max-width: 100%;
+  height: auto;
+  background: url('https://i.imgur.com/POdHelM.jpg');
+  background-size: cover;
+}
+
+.container {
   display: flex;
   justify-content: center;
+}
+
+  /* ***** header ***** */
+
+.header {
+  /* box-model */
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.appName {
+  font-size: 3em;
+  font-weight: 800;
+}
+
+.appName,
+.slogan {
+  /* typography */
+  text-align: center;
+  color: white;
+  font-family: 'Cinzel', serif;
+}
+
+.pollBtn,
+.addPoll,
+.submit {
+  /* box-model */
+  margin-left: 6px;
+  width: 15%;
+
+  /* visual */
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: var(--orange);
+}
+
+.submit {
+  width: 30%;
+}
+
+.closePoll,
+.deletePoll {
+  background-color: var(--gray);
+  border: 2px solid white;
+}
+
+.pollDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.addPoll {
+  margin: 0 auto;
+  color: white;
+}
+
+.deletePoll {
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+
+.closePoll {
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+}
+
+.pollBtn:hover,
+.addPoll:hover,
+.closePoll:hover,
+.deletePoll:hover {
+  /* visual */
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: var(--orange);
+  opacity: 0.75;
 }
 
 .prompt {
   text-align: center;
 }
 
-.header {
-  background-color: lightblue;
+.addCard {
+  display: flex;
+  justify-content: center;
+}
+
+.addPoll {
+  margin-bottom: 2em;
+}
+
+.argOne {
+  display: flex;
+}
+
+.argTwo {
+  display: flex;
+  justify-content: center;
+}
+
+.bigQ {
+  /* typography */
+  text-align: center;
+  color: white;
+  font-family: 'BenchNine', sans-serif;
+}
+
+.closeDel {
+  text-align: center;
+  /* margin-bottom: 3em; */
+}
+
+.createButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.cardClass {
+  display: flex;
+  justify-content: center;
+}
+
+.prompt {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.vote {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.thisThat {
+  color: white;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 4em;
+  word-spacing: 15px;
+}
+
+.list-group-flush {
+  display: flex;
 }
