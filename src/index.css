@@ -7,6 +7,10 @@
 
 }
 
+.poll .answers .option.white:hover, .poll .answers .option.white:active {
+	background: #D86334;
+}
+
 .arguably-container {
   max-width: 100%;
   height: auto;

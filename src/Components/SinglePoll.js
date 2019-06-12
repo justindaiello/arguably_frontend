@@ -53,8 +53,7 @@ class SinglePoll extends Component {
             answers={this.state.pollAnswers}
             onVote={this.handleVote}
             noStorage={true}
-            customStyles={{ questionBold: true }}
-            customStyles={{ theme: 'green' }}
+            customStyles={{ theme: 'white', questionBold: true }}
             />
         </div>
         <div className="closeDel">
