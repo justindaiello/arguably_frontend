@@ -163,6 +163,45 @@
   display: flex;
 }
 
+@media only screen and (max-device-width: 600px) {
+  .pollBtn {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .addPoll {
+    width: 75%;
+  }
+
+  .list-group-flush {
+    width: 90%
+  }
+
+  .prompt {
+    width: 80%
+  }
+
+}
+
 @media only screen and (max-width: 600px) {
+  .pollBtn {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+
+  .addPoll {
+    width: 75%;
+  }
+
+  .list-group-flush {
+    width: 90%
+  }
+
+  .prompt {
+    display: flex;
+    justify-content: center;
+    width: 100%
+  }
 
 }
