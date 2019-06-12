@@ -3,7 +3,6 @@ import Form from './Components/Form'
 import PollList from './Components/PollList';
 import Header from './Components/Header'
 import './App.css';
-import Button from 'react-bootstrap/Button';
 
 
 

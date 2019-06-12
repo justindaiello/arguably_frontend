@@ -1,7 +1,11 @@
 :root {
   --darkBlue: #1A445E;
   --cadetBlue: #54A18F;
-  --seaGreen: #287278
+  --seaGreen: #287278;
+}
+
+#root {
+  background: url("https://i.imgur.com/1tVifSE.jpg")
 }
 
 .container {
@@ -9,12 +13,39 @@
   justify-content: center;
 }
 
-.appName {
-  text-align: center;
+  /* ***** header ***** */
+
+.header {
+  /* box-model */
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
+.appName,
 .slogan {
+  /* typography */
   text-align: center;
+  color: white;
+}
+
+.pollBtn {
+  /* box-model */
+  margin: 0 auto;
+  margin-top: .2em;
+  width: 15%;
+
+  /* visual */
+  border: 1px solid white;
+  background-color: var(--darkBlue);
+}
+
+.pollBtn:hover {
+  /* visual */
+  background-color: var(--seaGreen);
+  border: 1px solid var(--darkBlue);
+  box-shadow: 2px 5px var(--darkBlue);
 }
 
 
@@ -22,17 +53,7 @@
   text-align: center;
 }
 
-.header {
 
-  /* box-model */
-  padding-top: 1em;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  /* visual */
-  background-color: var(--cadetBlue);
-}
 
 .addCard {
   display: flex;

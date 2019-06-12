@@ -14,10 +14,11 @@ const Header = (props) => {
           onClick={() => props.handleView('f')}>
             Show Closed Polls
         </Button> :
-        <button
+        <Button
+          className="pollBtn"
           onClick={() => props.handleView('t')}>
             Show Open Polls
-        </button>
+        </Button>
       }
     </header>
   )
