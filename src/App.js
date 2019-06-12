@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Form from './Components/Form'
 import PollList from './Components/PollList';
-import Header from './Components/Header'
+import Header from './Components/Header';
+import Button from 'react-bootstrap/Button';
 import './App.css';
 
 
@@ -147,10 +148,13 @@ class App extends Component {
           pollView={this.state.pollView}
           handleView={this.handleView}
         />
-        <button
-          onClick={this.toggleHidden}>
-          Add A Poll
-        </button>
+        <div class="pollDiv">
+          <Button
+            className="addPoll"
+            onClick={this.toggleHidden}>
+            Add A Poll
+          </Button>
+        </div>
         {!this.state.isHidden && <Form handleCreatePoll={this.handleCreatePoll}/>}
         <PollList
           view={this.state.pollView}

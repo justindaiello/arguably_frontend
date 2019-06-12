@@ -5,9 +5,7 @@ const Header = (props) => {
 
   return(
     <header className="header">
-      <h1 className="appName">ARGUABLY.US</h1>
-      <h4 className="slogan">Crowdsource your subjective debates</h4>
-
+      <nav>
       {props.pollView === 't' ?
         <Button
           className="pollBtn"
@@ -20,6 +18,9 @@ const Header = (props) => {
             Show Open Polls
         </Button>
       }
+    </nav>
+    <h1 className="appName">ARGUABLY.US</h1>
+    <h4 className="slogan">Crowdsource your subjective debates</h4>
     </header>
   )
 }

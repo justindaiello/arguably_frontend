@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Card, ListGroupItem, ListGroup } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+
 
 class Form extends Component {
 
@@ -48,9 +50,10 @@ class Form extends Component {
       <div className="container">
         <form onSubmit={this.handleSubmit}>
           <div className="prompt">
-          <label htmlFor='prompt'>Prompt</label>
-            <textarea type="text" value={this.state.question} onChange={this.handleChange} id="question"></textarea>
+          {/* <label htmlFor='prompt'>Prompt</label> */}
+            <textarea type="text" placeholder="Write your debate here"value={this.state.question} onChange={this.handleChange} id="question"></textarea>
           </div>
+          <h1 className="thisThat">This or That</h1>
           <div className="argOne">
             <Card className="cardClass" style={{ width: '16rem' }}>
               <ListGroup className="list-group-flush">
@@ -78,7 +81,7 @@ class Form extends Component {
             </Card>
           </div>
           <div className="createButton">
-            <input className="submit" type="submit" value="Create Debate" />
+            <Button className="submit" type="submit" value="Create Debate" >Create Debate</Button>
           </div>
         </form>
       </div>

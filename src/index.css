@@ -1,11 +1,17 @@
 :root {
-  --darkBlue: #1A445E;
-  --cadetBlue: #54A18F;
-  --seaGreen: #287278;
+  --orange: #D86334;
+  --gray: #3C595A;
 }
 
 #root {
-  background: url("https://i.imgur.com/1tVifSE.jpg")
+
+}
+
+.arguably-container {
+  max-width: 100%;
+  height: auto;
+  background: url('https://i.imgur.com/POdHelM.jpg');
+  background-size: cover;
 }
 
 .container {
@@ -23,37 +29,76 @@
   flex-direction: column;
 }
 
+.appName {
+  font-size: 3em;
+  font-weight: 800;
+}
+
 .appName,
 .slogan {
   /* typography */
   text-align: center;
   color: white;
+  font-family: 'Cinzel', serif;
 }
 
-.pollBtn {
+.pollBtn,
+.addPoll,
+.submit {
   /* box-model */
-  margin: 0 auto;
-  margin-top: .2em;
+  margin-left: 6px;
   width: 15%;
 
   /* visual */
-  border: 1px solid white;
-  background-color: var(--darkBlue);
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: var(--orange);
 }
 
-.pollBtn:hover {
+.submit {
+  width: 30%;
+}
+
+.closePoll,
+.deletePoll {
+  background-color: var(--gray);
+  border: 2px solid white;
+}
+
+.pollDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.addPoll {
+  margin: 0 auto;
+  color: white;
+}
+
+.deletePoll {
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+
+.closePoll {
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+}
+
+.pollBtn:hover,
+.addPoll:hover,
+.closePoll:hover,
+.deletePoll:hover {
   /* visual */
-  background-color: var(--seaGreen);
-  border: 1px solid var(--darkBlue);
-  box-shadow: 2px 5px var(--darkBlue);
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: var(--orange);
+  opacity: 0.75;
 }
-
 
 .prompt {
   text-align: center;
 }
-
-
 
 .addCard {
   display: flex;
@@ -74,12 +119,15 @@
 }
 
 .bigQ {
+  /* typography */
   text-align: center;
+  color: white;
+  font-family: 'BenchNine', sans-serif;
 }
 
 .closeDel {
   text-align: center;
-  margin-bottom: 3em;
+  /* margin-bottom: 3em; */
 }
 
 .createButton {
@@ -101,8 +149,17 @@
   margin-bottom: 1em;
 }
 
-.pollPoll {
+.vote {
+  margin: 0 auto;
   width: 50%;
+}
+
+.thisThat {
+  color: white;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 4em;
+  word-spacing: 15px;
 }
 
 .list-group-flush {
