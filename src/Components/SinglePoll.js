@@ -30,14 +30,14 @@ class SinglePoll extends Component {
       <div>
       <h2 className="bigQ"> { this.props.poll.question } </h2>
         <div className="argTwo">
-          <Card style={{ width: '30rem' }}>
+          <Card class="bulletPoints" style={{ width: '30rem' }}>
             <ListGroup className="list-group-flush">
               <ListGroupItem>{ this.props.poll.bp1 }</ListGroupItem>
               <ListGroupItem>{ this.props.poll.bp2 }</ListGroupItem>
               <ListGroupItem>{ this.props.poll.bp3 }</ListGroupItem>
             </ListGroup>
           </Card>
-          <Card style={{ width: '30rem' }}>
+          <Card class="bulletPoints" style={{ width: '30rem' }}>
             <ListGroup className="list-group-flush">
               <ListGroupItem>{ this.props.poll.bp4 }</ListGroupItem>
               <ListGroupItem>{ this.props.poll.bp5 }</ListGroupItem>

@@ -113,13 +113,20 @@
 .argTwo {
   display: flex;
   justify-content: center;
+  margin-bottom: 5px;
 }
+
 
 .bigQ {
   /* typography */
   text-align: center;
+  margin: 0 auto;
+  width: 40%;
   color: white;
   font-family: 'BenchNine', sans-serif;
+  margin-bottom: 5px;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 3px;
 }
 
 .closeDel {
@@ -147,8 +154,11 @@
 }
 
 .vote {
+  padding-top: -2px;
+  background-color: rgba(0,0,0,.5);
   margin: 0 auto;
   width: 50%;
+  border-radius: 3px;
 }
 
 .thisThat {
