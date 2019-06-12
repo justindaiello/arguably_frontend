@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const Header = (props) => {
 
@@ -8,10 +9,11 @@ const Header = (props) => {
       <h4 className="slogan">Crowdsource your subjective debates</h4>
 
       {props.pollView === 't' ?
-        <button
+        <Button
+          className="pollBtn"
           onClick={() => props.handleView('f')}>
             Show Closed Polls
-        </button> :
+        </Button> :
         <button
           onClick={() => props.handleView('t')}>
             Show Open Polls
