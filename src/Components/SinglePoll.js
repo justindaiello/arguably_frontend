@@ -47,20 +47,22 @@ class SinglePoll extends Component {
             </ListGroup>
           </Card>
           </div>
-        <div className="pollPoll">
-        <Poll
-          question={null}
-          answers={this.state.pollAnswers}
-          onVote={this.handleVote}
-          noStorage={true} />
+        <div className="vote">
+          <Poll
+            question={null}
+            answers={this.state.pollAnswers}
+            onVote={this.handleVote}
+            noStorage={true}
+            customStyles={{ theme: 'white', questionBold: true }}
+            />
         </div>
         <div className="closeDel">
         {this.props.poll.open === 't' ?
-          <Button variant="primary" onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</Button> :
+          <Button className="closePoll"variant="primary" onClick={() => { this.props.handleCheck(this.props.poll, this.props.arrayIndex, this.props.currentArray)}}>CLOSE POLL</Button> :
           <h4> THIS POLL IS CLOSED </h4>
         }
-        <Button variant="secondary" onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE POLL </Button>
-        </div>
+          <Button className="deletePoll" variant="secondary" onClick={() => {this.props.handleDelete(this.props.poll.id, this.props.arrayIndex, this.props.currentArray)}}> DELETE POLL </Button>
+          </div>
       </div>
     )
   }
